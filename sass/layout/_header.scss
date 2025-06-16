@@ -1,0 +1,82 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+@use '../components/button' as btn;
+
+
+header {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        gap: 20px;
+        background: #242424;
+        background: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, rgba(36, 36, 36, 1) 100%);
+        figure.logo {
+            margin: 0;
+            font-size: 0;
+            img.logo {
+                width: 130px;
+            }
+        }
+        figure.profile {
+            img.profile {
+                width: 174px;
+                padding-top: 20px
+            }
+        }
+        ul {
+            @include mx.reset-nav-ul();
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+    }
+    @include mx.breakpoint(tablet) {
+            display: block;
+            padding-bottom: 90px;
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+                background: none;
+                padding-top: 32px;
+                figure.logo {
+                    img.logo {
+                        width: 170px;
+                    }
+                }
+                figure.profile {
+                    display: none;
+                }
+                ul {
+                    li {
+                        a {
+                            img {
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    @include mx.breakpoint(desktopxl) {
+        padding-bottom: 130px;
+        nav {
+            padding-top: 40px;
+            ul {
+                margin-right: 32px;
+            }
+        }
+    }
+
+}
+

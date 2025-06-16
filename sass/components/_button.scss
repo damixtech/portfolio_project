@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as v;
+
+@mixin standard-button {
+    color: v.$primary-color;
+    font-family: v.$primary-font;
+    font-weight: v.$title-weight;
+    font-style: v.$font-style;
+    font-size: v.$xsmall-size;
+    text-decoration: none;
+    padding-bottom: 12px;
+    border-bottom: 2px solid v.$underline-color;
+    text-transform: uppercase;
+    line-height: 26px;
+    letter-spacing: 2.29px;
+}

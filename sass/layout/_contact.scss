@@ -1,0 +1,142 @@
+//SECTION CONTACT
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+@use '../components/button' as btn;
+
+section.contact {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border-bottom: 1px solid v.$primary-color;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        h2 {
+            color: v.$primary-color;
+            font-family: v.$primary-font;
+            font-weight: v.$title-weight;
+            font-style: v.$font-style;
+            font-size: v.$xlarge-size;
+            letter-spacing: -1.14px;
+            line-height: 40px;
+            margin: 0;
+        }
+        p {
+            color: v.$secondary-color;
+            font-family: v.$primary-font;
+            font-weight: v.$body-weight;
+            font-style: v.$font-style;
+            font-size: v.$xsmall-size;
+            line-height: 26px;
+            margin: 0;
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        input {
+            max-width: 100%;
+            border: none;
+            background: none;
+            border-bottom: 1px solid v.$primary-color;
+            padding: 0 0 17px 24px;
+            color: v.$primary-color;
+            font-family: v.$primary-font;
+            &::placeholder {
+                color: v.$secondary-color;
+                font-family: v.$primary-font;
+                font-weight: v.$body-weight;
+                font-style: v.$font-style;
+                font-size: v.$xsmall-size;
+                line-height: 26px;
+                letter-spacing: -0.22px;
+                
+            }
+        }
+        textarea {
+            background: none;
+            border: none;
+            max-width: 100%;
+            height: 80px;
+            padding: 0 0 17px 24px;
+            border-bottom: 1px solid v.$primary-color;
+            color: v.$primary-color;
+            font-family: v.$primary-font;
+            &::placeholder {
+                color: v.$secondary-color;
+                font-family: v.$primary-font;
+                font-weight: v.$body-weight;
+                font-style: v.$font-style;
+                font-size: v.$xsmall-size;
+                line-height: 26px;
+                letter-spacing: -0.22px;
+                
+            }
+
+        }
+        .form_button {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                width: max-content;
+                background: none;
+                border: none;
+                color: v.$primary-color;
+                font-family: v.$primary-font;
+                font-weight: v.$title-weight;
+                font-style: v.$font-style;
+                font-size: v.$xsmall-size;
+                line-height: 26px;
+                text-transform: uppercase;
+                border-bottom: 2px solid v.$underline-color;
+                padding: 0;
+                &:hover {
+                    color: v.$underline-color;
+                }
+            }
+        }
+    }
+    @include mx.breakpoint(tablet) {
+        align-items: center;
+        padding: 60px 0 90px 0;
+        &__content {
+            align-items: center;
+            h2 {
+                font-size: v.$xxxlarge-size;
+                line-height: v.$xxxlarge-size;
+            }
+            p {
+                max-width: 64%;
+                font-size: v.$small-size;
+                line-height: 28px;
+            }
+        }
+        form {
+            width: 62%;
+        }
+    }
+    @include mx.breakpoint(desktopxl) {
+        padding: 84px 0 90px 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        &__content {
+            text-align: left;
+            justify-content: flex-start;
+            align-items: start;
+            gap: 36px;
+            h2 {
+                font-size: v.$desktop-size;
+                line-height: v.$desktop-size;
+            }
+            p {
+                max-width: 66%;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+// TECHS
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+
+section.techs {
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 1px solid v.$primary-color;
+    border-top: 1px solid v.$primary-color;
+    margin-bottom: 80px;
+
+    article {
+        text-align: center;
+        h2 {
+            color: v.$primary-color;
+            font-family: v.$primary-font;
+            font-weight: v.$title-weight;
+            font-style: v.$font-style;
+            font-size: v.$large-size;
+            letter-spacing: -1px;
+            line-height: 40px;
+            margin: 0;
+        }
+        p {
+            color: v.$secondary-color;
+            font-family: v.$primary-font;
+            font-weight: v.$body-weight;
+            font-style: v.$font-style;
+            font-size: v.$xsmall-size;
+            line-height: 26px;
+            margin: 0;
+        }
+    }
+    @include mx.breakpoint(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 52px;
+        border-bottom: 0;
+        margin-bottom: 100px;
+        article {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            width: 40%;
+            gap: 14px;
+            h2 {
+                font-size: v.$xxlarge-size;
+                line-height: 56px;
+                letter-spacing: -1.5px;
+            }
+            p {
+                font-size: v.$small-size;
+                line-height: 28px;
+            }
+        }
+        
+    }
+    @include mx.breakpoint(desktopxl) {
+        padding: 72px 5px 0 5px;
+        gap: 50px;
+        margin-bottom: 140px;
+        article {
+            width: 30%
+        }
+    }
+}

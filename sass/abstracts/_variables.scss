@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+//COLORS
+$primary-color: white;
+$secondary-color: #D9D9D9;
+$body-color: #909090;
+$underline-color: #4EE1A0;
+$background-color: #151515;
+$background-color2: #242424;
+
+//FONTS
+$primary-font: "Space Grotesk", sans-serif;
+$title-weight: 700;
+$body-weight: 500;
+$font-style: normal;
+
+//FONT-SIZE
+$xsmall-size: 16px;
+$small-size: 18px;
+$medium-size: 24px;
+$large-size: 32px;
+$xlarge-size: 40px;
+$xxlarge-size: 48px;
+$xxxlarge-size: 72px;
+$desktop-size: 88px;
+
+//BREAKPOINTS
+$bp-tablet: 768px;
+$bp-tablet-horizontal: 1024px;
+$bp-desktop: 1200px;
+$bp-desktop-xl: 1440px;

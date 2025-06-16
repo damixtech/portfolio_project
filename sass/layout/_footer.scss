@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 60px 110px;
+    figure {
+        margin: 0;
+        img {
+            width: 130px;
+        }
+    }
+    ul {
+        @include mx.reset-nav-ul();
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+    @include mx.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 40px 0;
+        ul {
+            gap: 32px;
+        }
+    }
+    @include mx.breakpoint(desktopxl) {
+        padding: 47px 0 92px 0;
+        figure {
+            img {
+                width: 170px;
+            }
+            
+        }
+        ul li a {
+            img {
+                width: 24px;
+            }
+        }
+    }
+}

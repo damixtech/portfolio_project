@@ -1,0 +1,25 @@
+//PAGE 
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+
+body {
+    .page {
+        max-width: 100%;
+        padding: 0 16px;
+        @include mx.breakpoint(tablet) {
+            max-width: 100%;
+            padding: 0 32px;
+        }
+        @include mx.breakpoint(desktop) {
+            max-width: 1440px;
+            padding: 0px 64px;
+        } 
+        @include mx.breakpoint(desktopxl) {
+            max-width: 1440px;
+            padding: 0px 165px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

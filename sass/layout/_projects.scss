@@ -1,0 +1,134 @@
+//SECTION PROJECTS
+
+@use '../abstracts/mixins' as mx;
+@use '../abstracts/variables' as v;
+@use '../components/button' as btn;
+
+section.projects {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            color: v.$primary-color;
+            font-family: v.$primary-font;
+            font-weight: v.$title-weight;
+            font-style: v.$font-style;
+            font-size: v.$xlarge-size;
+            letter-spacing: -1.14px;
+            line-height: 40px;
+            margin: 0;
+        }
+        a {
+            @include btn.standard-button();
+        }
+    }
+    section.projects__grid {
+        display: flex;
+        flex-direction: column;
+        gap:  40px;
+
+        article {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            img {
+                max-width: 100%;
+            }
+            h3 {
+                color: v.$primary-color;
+                font-family: v.$primary-font;
+                font-weight: v.$title-weight;
+                font-style: v.$font-style;
+                font-size: v.$medium-size;
+                text-transform: uppercase;
+                line-height: 32px;
+                margin: 0;
+            }
+            p {
+                display: flex;
+                gap: 18px;
+                span {
+                    display: inline-block;
+                    color: v.$secondary-color;
+                    font-family: v.$primary-font;
+                    font-weight: v.$title-weight;
+                    font-style: v.$font-style;
+                    font-size: v.$small-size;
+                    text-transform: uppercase;
+                    line-height: 28px;
+
+                }
+            }
+            .buttons {
+                display: flex;
+                gap: 30px;
+                a {
+                    @include btn.standard-button();
+                }
+            }
+            &:last-child {
+                padding-bottom: 80px;
+            }
+        }
+    }
+    @include mx.breakpoint(tablet) {
+        header {
+            h2 {
+                font-size: v.$xxxlarge-size;
+                letter-spacing: -2.05px;
+                line-height: v.$xxxlarge-size;
+            }
+        }
+        section.projects__grid {
+            display: grid;
+            grid-template-columns: calc(50% - 12px ) calc(50% - 12px);
+            gap: 60px 24px;
+            padding-bottom: 100px;
+            article {
+                padding: 0;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+    @include mx.breakpoint(desktopxl) {
+        header {
+            padding-bottom: 0;
+            margin-bottom: 60px;
+            h2 {
+                font-size: v.$desktop-size;
+                line-height: v.$desktop-size;
+            }
+        }
+        section.projects__grid {
+            article {
+                position: relative;
+                div.buttons {
+                    display: none;
+                }
+                &:hover {
+                    img {
+                        opacity: 25%;
+                    }
+                    .buttons {
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 48px;
+                        top: 210px;
+                        left: 270px;
+                        a {
+                            font-size: v.$medium-size;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

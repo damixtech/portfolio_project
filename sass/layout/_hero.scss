@@ -1,0 +1,85 @@
+//SECTION HERO
+
+@use '../abstracts/variables' as v;
+@use '../components/button' as btn;
+@use '../abstracts/mixins' as mx;
+
+
+section.hero {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding-bottom: 40px;
+    h1 {
+        color: v.$primary-color;
+        font-family: v.$primary-font;
+        font-weight: v.$title-weight;
+        font-style: v.$font-style;
+        font-size: v.$xlarge-size;
+        letter-spacing: -1.14px;
+        line-height: 40px;
+        margin: 0;
+        .underline {
+            border-bottom: 4px solid v.$underline-color;
+            
+        }
+    }
+    p {
+        color: v.$secondary-color;
+        font-family: v.$primary-font;
+        font-weight: v.$body-weight;
+        font-style: v.$font-style;
+        font-size: v.$xsmall-size;
+        margin: 0;
+    }
+    a {
+        @include btn.standard-button();
+        &:hover {
+            color: v.$underline-color;
+        }
+    }
+    @include mx.breakpoint(tablet) {
+        align-items: flex-start;
+        text-align: left;
+        gap: 30px;
+        padding-bottom: 0;
+        margin-bottom: 60px;
+        h1 {
+            font-size: v.$xxxlarge-size;
+            letter-spacing: -2.05px;
+            line-height: v.$xxxlarge-size;
+            margin-bottom: 28px;
+            span.tablet {
+                display: block;
+            }
+        }
+        p {
+            font-size: v.$small-size;
+            line-height: 28px;
+            span.tablet {
+                display: block;
+            }
+        }
+    }
+    @include mx.breakpoint(desktopxl) {
+        padding: 0;
+        max-width: 70%;
+        margin-bottom: 170px;
+        gap: 0;
+        h1 {
+            font-size: v.$desktop-size;
+            line-height: v.$desktop-size;
+            letter-spacing: -2.5px;
+            margin-bottom: 60px;
+            span.tablet {
+                display: inline;
+            }
+        }
+        p {
+            margin-bottom: 66px;
+        }
+    }
+}
